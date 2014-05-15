@@ -2,4 +2,6 @@
 <h1> The article title is: <%=  @article.title %></h1>
 
 <p> The article body is: <%= @article.body %></p>
+<p> <%= link_to "edit", edit_article_path(@article) %> </P>
+<p> <%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "really delete the article?" } %> </p>
 <%= link_to "<<back to articles list ", articles_path %>

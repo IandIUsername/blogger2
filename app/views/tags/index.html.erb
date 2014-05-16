@@ -1,0 +1,15 @@
+Tag Index</br>
+
+Go to a tags show page:
+<% @tags.each do |tag| %></br>
+<%= link_to tag.name, tag_path(tag) %>
+<% end %>
+
+</br>
+</br>To delete a tag, click on it:
+
+<% @tags.each do |tag| %></br>
+<%= link_to tag.name, tag_path(tag), method: :delete, data: {confirm: "really delete the article?"}  %>
+<% end %>
+
+

@@ -6,11 +6,17 @@
 <%= render partial: 'articles/comment', collection: @article.comments %>
 
 
+
  <P>
   Tags:
   <% @article.tags.each do |tag| %>
   <%= link_to tag.name, tag_path(tag) %>
   <% end %>
+  
+   <% if @article.image.exists? %>
+   <%= image_tag @article.image.url(:medium) %>
+   <% end %>
+   
   </p>
 <p> <%= link_to "edit", edit_article_path(@article) %> </p>
 <p> <%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "really delete the article?" } %> </p>
